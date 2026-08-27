@@ -54,6 +54,7 @@
   --radius-horaires: 32px;
   --radius-card: 28px;
   --content-max: 1400px;
+  --content-max-wide: 1760px;
   --content-pad: 28px;
 }
 
@@ -568,6 +569,10 @@ button:focus-visible {
   .zone-stats { gap: 28px; }
   .mobile-call-bar { display: block; }
   body { padding-bottom: 76px; }
+}
+
+@media (min-width: 1900px) {
+  .container { max-width: var(--content-max-wide); }
 }
 
 /* ===================== LEGAL PAGES ===================== */
