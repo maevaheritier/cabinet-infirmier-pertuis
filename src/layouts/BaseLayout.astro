@@ -1,0 +1,66 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  noindex?: boolean;
+}
+
+const { title, description, noindex = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{title}</title>
+<meta name="description" content={description}>
+<link rel="canonical" href={canonical}>
+<meta name="robots" content={noindex ? "noindex, follow" : "index, follow"}>
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content={title}>
+<meta property="og:description" content={description}>
+<meta property="og:url" content={canonical}>
+<meta property="og:site_name" content="Cabinet infirmier Maeva & Sophie">
+
+<link rel="stylesheet" href="/style.css">
+<script is:inline>document.documentElement.classList.add('js-reveal');</script>
+
+{!noindex && (
+  <!-- TODO: schema à finaliser avec la cliente — nom exact, adresse réelle, numéro réel, numéros ADELI/RPPS si publiés -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Cabinet infirmier Maeva & Sophie",
+    "description": "Cabinet d'infirmières libérales D.E. à Pertuis (84120) : soins à domicile 24h/24, 7j/7, sur prescription médicale.",
+    "telephone": "+33612345678",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "12 rue Exemple",
+      "postalCode": "84120",
+      "addressLocality": "Pertuis",
+      "addressRegion": "Vaucluse",
+      "addressCountry": "FR"
+    },
+    "areaServed": { "@type": "City", "name": "Pertuis" },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "medicalSpecialty": "Nursing",
+    "paymentAccepted": "Carte Vitale, tiers payant",
+    "url": canonical.toString()
+  })} />
+)}
+</head>
+<body>
+<a class="visually-hidden" href="#contenu">Aller au contenu</a>
+<slot />
+<script src="/js/main.js" defer></script>
+</body>
+</html>

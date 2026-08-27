@@ -1,0 +1,337 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<BaseLayout
+  title="Infirmières libérales à domicile Pertuis (84120) | Cabinet Maeva & Sophie"
+  description="Cabinet infirmier libéral à Pertuis (84120) : soins à domicile 24h/24, 7j/7, sur prescription médicale. Pansements, prises de sang, injections, nursing. Conventionnées, tiers payant. Appelez le 06 12 34 56 78."
+>
+
+<!-- ===================== HERO + HEADER ===================== -->
+<section class="hero-section">
+  <div class="container hero-wrap">
+    <div class="hero-panel">
+      <header class="site-header">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">MS</span>
+          <span class="brand-name">Maeva &amp; Sophie</span>
+        </div>
+        <nav class="main-nav" aria-label="Navigation principale">
+          <a href="#soins">Nos soins</a>
+          <a href="#nous">Qui sommes-nous</a>
+          <a href="#zone">Zone d'intervention</a>
+          <a href="#horaires">Horaires</a>
+          <a href="#faq">Questions</a>
+        </nav>
+        <a class="call-pill" href="tel:+33612345678">
+          <span class="icon" aria-hidden="true">call</span>
+          <span>06 12 34 56 78</span>
+        </a>
+      </header>
+
+      <div class="hero-body">
+        <div class="hero-copy" data-reveal="0">
+          <p class="kicker-light">Infirmières libérales D.E. — Pertuis (84120)</p>
+          <h1 class="hero-title">Vos soins<br>à domicile,<br><span class="accent">24h/24, 7j/7.</span></h1>
+          <p class="hero-chapo">Maeva et Sophie interviennent chez vous, sur prescription médicale. Un appel suffit pour organiser le premier passage.</p>
+          <div class="hero-actions">
+            <a class="btn-white" href="tel:+33612345678">
+              <span class="icon" aria-hidden="true">call</span>06 12 34 56 78
+            </a>
+            <a class="btn-ghost" href="https://wa.me/33612345678">Écrire sur WhatsApp</a>
+          </div>
+          <div class="hero-badges">
+            <span><span class="icon" aria-hidden="true">verified_user</span>Conventionnées</span>
+            <span><span class="icon" aria-hidden="true">credit_card</span>Tiers payant</span>
+            <span><span class="icon" aria-hidden="true">home_health</span>À domicile</span>
+          </div>
+        </div>
+
+        <div class="hero-media" data-reveal="140">
+          <div class="hero-photo-frame">
+            <!-- TODO photo réelle : infirmière en soin à domicile, format vertical 4/5 -->
+            <span class="photo-placeholder" role="img" aria-label="Emplacement photo à venir : infirmière en soin à domicile">Photo à venir<br>(format vertical 4/5)</span>
+          </div>
+          <div class="hero-availability">
+            <span class="hero-availability-main"><span class="icon" aria-hidden="true">schedule</span>Joignables 24h/24</span>
+            <span class="hero-availability-sub">on vous répond</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main id="contenu">
+
+  <!-- ===================== NOS SOINS ===================== -->
+  <section id="soins" class="soins-section container" aria-labelledby="soins-title">
+    <div class="soins-panel">
+      <div class="section-head" data-reveal="0">
+        <p class="kicker">Nos soins</p>
+        <h2 class="section-title" id="soins-title">Les soins les plus demandés</h2>
+        <p class="section-chapo">Et tout le reste sur simple demande — si votre soin n'est pas listé, appelez-nous.</p>
+      </div>
+
+      <div class="soins-grid">
+        <div class="soin-card" data-reveal="0">
+          <div class="soin-icon"><span class="icon" aria-hidden="true">healing</span></div>
+          <div class="soin-card-title">Pansements &amp; plaies</div>
+          <div class="soin-card-body">Plaies simples ou complexes, escarres, post-opératoire. Réfection à votre rythme.</div>
+        </div>
+        <div class="soin-card soin-card--featured" data-reveal="90">
+          <div class="soin-icon"><span class="icon" aria-hidden="true">bloodtype</span></div>
+          <div class="soin-card-title">Prises de sang</div>
+          <div class="soin-card-body">À jeun, tôt le matin, chez vous. Résultats transmis à votre médecin.</div>
+        </div>
+        <div class="soin-card" data-reveal="180">
+          <div class="soin-icon"><span class="icon" aria-hidden="true">elderly</span></div>
+          <div class="soin-card-title">Nursing &amp; autonomie</div>
+          <div class="soin-card-body">Toilettes, aide au lever, accompagnement des personnes âgées ou dépendantes.</div>
+        </div>
+      </div>
+
+      <div class="soins-accordion" data-reveal="0">
+        <button type="button" class="accordion-trigger" id="soins-accordion-trigger" aria-expanded="false" aria-controls="soins-accordion-panel">
+          <span class="accordion-label">Voir les 7 autres soins</span>
+          <span class="accordion-sign" aria-hidden="true">+</span>
+        </button>
+        <div id="soins-accordion-panel" class="autres-soins-panel" role="region" aria-labelledby="soins-accordion-trigger" hidden>
+          <ul class="autres-soins-grid">
+            <li><span class="icon" aria-hidden="true">check_circle</span>Injections &amp; perfusions</li>
+            <li><span class="icon" aria-hidden="true">check_circle</span>Suivi du diabète (glycémie, insuline)</li>
+            <li><span class="icon" aria-hidden="true">check_circle</span>Soins post-opératoires</li>
+            <li><span class="icon" aria-hidden="true">check_circle</span>Vaccination</li>
+            <li><span class="icon" aria-hidden="true">check_circle</span>Perte d'autonomie / personnes âgées</li>
+            <li><span class="icon" aria-hidden="true">check_circle</span>Bilan de soins infirmiers (BSI)</li>
+            <li><span class="icon" aria-hidden="true">check_circle</span>Surveillance de traitement</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== QUI SOMMES-NOUS ===================== -->
+  <section id="nous" class="nous-section" aria-labelledby="nous-title">
+    <div class="container nous-wrap">
+      <div class="nous-photo-frame" data-reveal="0">
+        <!-- TODO photo réelle des deux associées, cadrage carré, en soin -->
+        <span class="photo-placeholder" role="img" aria-label="Emplacement photo à venir : Maeva et Sophie, cadrage carré">Photo à venir<br>(cadrage carré)</span>
+      </div>
+      <div class="nous-copy" data-reveal="120">
+        <p class="kicker" style="color:#8FD1B9">Qui sommes-nous</p>
+        <h2 class="section-title" id="nous-title">Deux infirmières, un même secteur, une continuité de soins.</h2>
+        <p class="section-chapo">Nous nous relayons pour que vous voyiez toujours un visage connu, et que vos soins ne s'arrêtent ni le week-end ni pendant les vacances.</p>
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-name">Maeva</div>
+            <div class="team-role">IDE — plaies, cicatrisation, suivi du diabète</div>
+          </div>
+          <div class="team-card">
+            <div class="team-name">Sophie</div>
+            <div class="team-role">IDE — soins post-opératoires, accompagnement à domicile</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ORGANISER / URGENCE ===================== -->
+  <section class="double-section container">
+    <div class="double-grid" data-reveal="0">
+      <div class="double-col">
+        <span class="icon" aria-hidden="true">event_available</span>
+        <div class="double-title">Un soin à organiser cette semaine ?</div>
+        <p>Un appel, votre ordonnance, et nous fixons ensemble l'heure du premier passage.</p>
+        <a class="double-link" href="tel:+33612345678">Nous appeler<span class="icon" aria-hidden="true">arrow_forward</span></a>
+      </div>
+      <div class="double-col">
+        <span class="icon" aria-hidden="true">emergency</span>
+        <div class="double-title">Une urgence vitale&nbsp;?</div>
+        <p>Appelez le <strong>15</strong> ou le <strong>112</strong>. Pour un conseil médical en soirée, le <strong>116 117</strong>.</p>
+        <a class="double-link" href="tel:15">Appeler le 15<span class="icon" aria-hidden="true">arrow_forward</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ZONE D'INTERVENTION ===================== -->
+  <section id="zone" class="zone-section container" aria-labelledby="zone-title">
+    <div class="zone-copy" data-reveal="0">
+      <p class="kicker">Zone d'intervention</p>
+      <h2 class="section-title" id="zone-title">Nous intervenons à Pertuis</h2>
+      <p class="section-chapo">Nous nous déplaçons uniquement sur la commune de Pertuis (84120), tous quartiers confondus. Rester sur un seul secteur, c'est arriver vite et tenir nos horaires.</p>
+      <div class="zone-stats">
+        <div class="zone-stat">
+          <div class="zone-stat-num">Pertuis</div>
+          <div class="zone-stat-label">toute la commune, 84120</div>
+        </div>
+        <div class="zone-stat">
+          <div class="zone-stat-num">Tous quartiers</div>
+          <div class="zone-stat-label">sans supplément de déplacement</div>
+        </div>
+      </div>
+      <p class="zone-note">Vous habitez juste à côté&nbsp;? Appelez-nous, nous vous dirons franchement si nous pouvons passer.</p>
+    </div>
+    <div class="zone-visual" data-reveal="120">
+      <iframe
+        class="zone-map-frame"
+        title="Carte de Pertuis (84120), zone d'intervention du cabinet"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=5.4658%2C43.6797%2C5.5358%2C43.7097&layer=mapnik&marker=43.6947%2C5.5008"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+      <a
+        class="zone-map-link"
+        href="https://www.openstreetmap.org/?mlat=43.6947&mlon=5.5008#map=14/43.6947/5.5008"
+        target="_blank"
+        rel="noopener"
+      >
+        <span class="icon" aria-hidden="true">open_in_new</span>Voir l'itinéraire
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== HORAIRES ===================== -->
+  <section id="horaires" class="horaires-section" aria-labelledby="horaires-title">
+    <div class="container horaires-wrap">
+      <div class="horaires-copy" data-reveal="0">
+        <p class="kicker">Horaires</p>
+        <h2 class="section-title" id="horaires-title">Joignables 24h/24, 7j/7</h2>
+        <p class="section-chapo">Nous décrochons à toute heure, y compris la nuit, le week-end et les jours fériés. Les passages s'organisent par téléphone, la veille ou le matin même.</p>
+        <a class="btn-dark" href="tel:+33612345678">
+          <span class="icon" aria-hidden="true">call</span>Organiser un passage
+        </a>
+      </div>
+      <dl class="horaires-card" data-reveal="120">
+        <div class="horaires-row"><dt>Lundi — dimanche</dt><dd>24h/24</dd></div>
+        <div class="horaires-row"><dt>Jours fériés</dt><dd>24h/24</dd></div>
+        <div class="horaires-row"><dt>Appels &amp; organisation des soins</dt><dd>à toute heure</dd></div>
+        <div class="horaires-row"><dt>Passages à domicile</dt><dd>matin, après-midi et soir</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section id="faq" class="faq-section" aria-labelledby="faq-title">
+    <div class="faq-head" data-reveal="0">
+      <p class="kicker">Questions fréquentes</p>
+      <h2 class="section-title" id="faq-title">Bon à savoir avant d'appeler</h2>
+    </div>
+    <div class="faq-list" data-reveal="0">
+      <div class="faq-item">
+        <button type="button" class="faq-trigger" id="faq-trigger-1" aria-expanded="false" aria-controls="faq-panel-1">
+          <span>Faut-il une ordonnance ?</span>
+          <span class="faq-sign" aria-hidden="true">+</span>
+        </button>
+        <div id="faq-panel-1" class="faq-answer" role="region" aria-labelledby="faq-trigger-1" hidden>
+          Oui, la plupart des soins à domicile sont réalisés sur prescription médicale. Si vous n'en avez pas encore, appelez-nous : nous vous orientons.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-trigger" id="faq-trigger-2" aria-expanded="false" aria-controls="faq-panel-2">
+          <span>Les soins sont-ils remboursés ?</span>
+          <span class="faq-sign" aria-hidden="true">+</span>
+        </button>
+        <div id="faq-panel-2" class="faq-answer" role="region" aria-labelledby="faq-trigger-2" hidden>
+          Nous sommes conventionnées et pratiquons le tiers payant : vous n'avancez rien avec votre carte Vitale et votre mutuelle.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-trigger" id="faq-trigger-3" aria-expanded="false" aria-controls="faq-panel-3">
+          <span>Sous quel délai pouvez-vous passer ?</span>
+          <span class="faq-sign" aria-hidden="true">+</span>
+        </button>
+        <div id="faq-panel-3" class="faq-answer" role="region" aria-labelledby="faq-trigger-3" hidden>
+          En général dès le lendemain, souvent le jour même pour les prises de sang et les pansements urgents.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-trigger" id="faq-trigger-4" aria-expanded="false" aria-controls="faq-panel-4">
+          <span>Intervenez-vous le week-end et les jours fériés ?</span>
+          <span class="faq-sign" aria-hidden="true">+</span>
+        </button>
+        <div id="faq-panel-4" class="faq-answer" role="region" aria-labelledby="faq-trigger-4" hidden>
+          Oui, nous assurons une permanence tous les jours de l'année pour les soins en cours.
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="container footer-wrap">
+    <div class="footer-panel" data-reveal="0">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <div class="footer-brand-row">
+            <span class="footer-mark" aria-hidden="true">M<span style="opacity:.6">S</span></span>
+            <span class="footer-brand-name">Maeva &amp; Sophie</span>
+          </div>
+          <p class="footer-pitch">Cabinet infirmier libéral à Pertuis — soins à domicile sur prescription médicale, 7 jours sur 7.</p>
+          <div class="footer-contact">
+            <div class="footer-contact-item"><span class="icon" aria-hidden="true">location_on</span>12 rue Exemple, 84120 Pertuis</div>
+            <a class="footer-contact-item" href="tel:+33612345678"><span class="icon" aria-hidden="true">call</span>06 12 34 56 78</a>
+            <a class="footer-contact-item" href="https://wa.me/33612345678"><span class="icon" aria-hidden="true">chat</span>WhatsApp</a>
+          </div>
+          <div class="footer-socials">
+            <a class="footer-social" href="tel:+33612345678" aria-label="Appeler le cabinet"><span class="icon" aria-hidden="true">call</span></a>
+            <a class="footer-social" href="https://wa.me/33612345678" aria-label="Écrire sur WhatsApp"><span class="icon" aria-hidden="true">chat</span></a>
+            <a class="footer-social" href="#zone" aria-label="Voir la zone d'intervention"><span class="icon" aria-hidden="true">map</span></a>
+          </div>
+          <a class="footer-zone-link" href="#zone">Voir la zone d'intervention<span class="icon" aria-hidden="true">arrow_forward</span></a>
+        </div>
+
+        <nav class="footer-col" aria-label="Le cabinet">
+          <div class="footer-col-title">Le cabinet</div>
+          <a href="#soins">Nos soins</a>
+          <a href="#nous">Qui sommes-nous</a>
+          <a href="#zone">Zone d'intervention</a>
+          <a href="#horaires">Horaires</a>
+          <a href="#faq">Questions fréquentes</a>
+        </nav>
+
+        <div class="footer-col">
+          <div class="footer-col-title">Nos soins</div>
+          <span>Pansements &amp; plaies</span>
+          <span>Prises de sang</span>
+          <span>Injections &amp; perfusions</span>
+          <span>Suivi du diabète</span>
+          <span>Nursing &amp; autonomie</span>
+        </div>
+
+        <div class="footer-avail-card">
+          <div class="footer-avail-title">Disponibilités</div>
+          <dl style="display:flex;flex-direction:column;gap:0">
+            <div class="footer-avail-row"><dt>Lundi — dimanche</dt><dd>24h/24</dd></div>
+            <div class="footer-avail-row"><dt>Jours fériés</dt><dd>24h/24</dd></div>
+            <div class="footer-avail-row"><dt>Appels &amp; organisation</dt><dd>à toute heure</dd></div>
+            <div class="footer-avail-row"><dt>Passages à domicile</dt><dd>matin, après-midi, soir</dd></div>
+          </dl>
+          <a class="footer-avail-cta" href="tel:+33612345678"><span class="icon" aria-hidden="true">call</span>Nous appeler</a>
+        </div>
+      </div>
+
+      <div class="emergency-banner">
+        <span class="icon" aria-hidden="true">emergency</span>
+        <span>Urgence vitale : appelez le <strong>15</strong> ou le <strong>112</strong> — conseil médical le soir et le week-end : <strong>116 117</strong>.</span>
+      </div>
+    </div>
+
+    <div class="legal-bar">
+      <span>© 2026 Cabinet infirmier Maeva &amp; Sophie · Inscrites à l'Ordre National des Infirmiers</span>
+      <div class="legal-links">
+        <a href="/mentions-legales">Mentions légales</a>
+        <a href="/confidentialite">Données personnelles</a>
+        <a href="/accessibilite">Accessibilité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- barre d'appel fixe mobile : action principale du site en permanence accessible -->
+<div class="mobile-call-bar">
+  <a href="tel:+33612345678"><span class="icon" aria-hidden="true">call</span>Appeler le cabinet</a>
+</div>
+
+</BaseLayout>
