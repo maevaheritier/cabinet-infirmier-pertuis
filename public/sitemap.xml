@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.cabinet-maeva-sophie.fr/</loc>
+    <loc>https://cabinet-infirmier-pertuis.netlify.app/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.cabinet-maeva-sophie.fr/mentions-legales</loc>
+    <loc>https://cabinet-infirmier-pertuis.netlify.app/mentions-legales</loc>
     <changefreq>yearly</changefreq>
     <priority>0.1</priority>
   </url>
   <url>
-    <loc>https://www.cabinet-maeva-sophie.fr/confidentialite</loc>
+    <loc>https://cabinet-infirmier-pertuis.netlify.app/confidentialite</loc>
     <changefreq>yearly</changefreq>
     <priority>0.1</priority>
   </url>
   <url>
-    <loc>https://www.cabinet-maeva-sophie.fr/accessibilite</loc>
+    <loc>https://cabinet-infirmier-pertuis.netlify.app/accessibilite</loc>
     <changefreq>yearly</changefreq>
     <priority>0.1</priority>
   </url>

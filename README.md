@@ -30,7 +30,7 @@ Site statique pur : déployable tel quel sur Netlify, Vercel ou OVH.
 - **Mentions légales / RGPD** : contenu à compléter dans `src/pages/mentions-legales.astro`
   et `confidentialite.astro` (éditeur, hébergeur, etc.).
 - **Domaine réel** : `astro.config.mjs` et les balises canonical/OG utilisent
-  `https://www.cabinet-maeva-sophie.fr` à titre provisoire.
+  `https://cabinet-infirmier-pertuis.netlify.app` à titre provisoire.
 
 ## Notes techniques
 

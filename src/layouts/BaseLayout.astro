@@ -3,9 +3,10 @@ interface Props {
   title: string;
   description: string;
   noindex?: boolean;
+  faq?: { q: string; a: string }[];
 }
 
-const { title, description, noindex = false } = Astro.props;
+const { title, description, noindex = false, faq } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -30,7 +31,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 <script is:inline>document.documentElement.classList.add('js-reveal');</script>
 
 {!noindex && (
-  <!-- TODO: schema à finaliser avec la cliente — nom exact, adresse réelle, numéro réel, numéros ADELI/RPPS si publiés -->
+  <!-- TODO: numéros ADELI/RPPS à ajouter si la cliente veut les publier -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
@@ -45,6 +46,11 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       "addressRegion": "Vaucluse",
       "addressCountry": "FR"
     },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 43.6779007,
+      "longitude": 5.5030998
+    },
     "areaServed": { "@type": "City", "name": "Pertuis" },
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
@@ -55,6 +61,18 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     "medicalSpecialty": "Nursing",
     "paymentAccepted": "Carte Vitale, tiers payant",
     "url": canonical.toString()
+  })} />
+)}
+
+{!noindex && faq && faq.length > 0 && (
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faq.map((item) => ({
+      "@type": "Question",
+      "name": item.q,
+      "acceptedAnswer": { "@type": "Answer", "text": item.a }
+    }))
   })} />
 )}
 </head>

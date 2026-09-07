@@ -1,9 +1,37 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const faq = [
+  {
+    q: "Faut-il une ordonnance ?",
+    a: "Oui, la plupart des soins à domicile sont réalisés sur prescription médicale. Si vous n'en avez pas encore, appelez-nous : nous vous orientons.",
+  },
+  {
+    q: "Les soins sont-ils remboursés ?",
+    a: "Nous sommes conventionnées et pratiquons le tiers payant : vous n'avancez rien avec votre carte Vitale et votre mutuelle.",
+  },
+  {
+    q: "Sous quel délai pouvez-vous passer ?",
+    a: "En général dès le lendemain, souvent le jour même pour les prises de sang et les pansements urgents.",
+  },
+  {
+    q: "Intervenez-vous le week-end et les jours fériés ?",
+    a: "Oui, nous intervenons tous les jours de l'année, de 8h à 20h, y compris les jours fériés.",
+  },
+  {
+    q: "Intervenez-vous en dehors de Pertuis ?",
+    a: "Non, nous intervenons uniquement sur la commune de Pertuis (84120), tous quartiers confondus. Rester sur un seul secteur nous permet d'arriver vite et de tenir nos horaires.",
+  },
+  {
+    q: "Votre cabinet est-il conventionné avec l'Assurance Maladie ?",
+    a: "Oui, nous sommes conventionnées secteur 1. Avec votre carte Vitale et votre mutuelle, vous n'avez aucune avance de frais à faire.",
+  },
+];
 ---
 <BaseLayout
-  title="Infirmières libérales à domicile Pertuis (84120) | Cabinet Maeva & Sophie"
-  description="Cabinet infirmier libéral à Pertuis (84120) : soins à domicile de 8h à 20h, 7j/7, sur prescription médicale. Pansements, prises de sang, injections, nursing. Conventionnées, tiers payant. Appelez le 06 69 20 84 75."
+  title="Infirmière à domicile Pertuis (84120) | Maeva & Sophie"
+  description="Infirmières libérales à Pertuis (84120). Soins à domicile de 8h à 20h, 7j/7, sur ordonnance. Conventionnées, tiers payant. 06 69 20 84 75."
+  faq={faq}
   noindex
 >
 
@@ -31,7 +59,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="hero-body">
         <div class="hero-copy" data-reveal="0">
           <p class="kicker-light">Infirmières libérales D.E., Pertuis (84120)</p>
-          <h1 class="hero-title">Vos soins<br>à domicile,<br><span class="accent">8h – 20h, 7j/7.</span></h1>
+          <h1 class="hero-title">Votre infirmière<br>à domicile à Pertuis,<br><span class="accent">8h – 20h, 7j/7.</span></h1>
           <p class="hero-chapo">Maeva et Sophie interviennent chez vous, sur prescription médicale. Un appel suffit pour organiser le premier passage.</p>
           <div class="hero-actions">
             <a class="btn-white" href="tel:+33669208475">
@@ -219,42 +247,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <h2 class="section-title" id="faq-title">Bon à savoir avant d'appeler</h2>
     </div>
     <div class="faq-list" data-reveal="0">
-      <div class="faq-item">
-        <button type="button" class="faq-trigger" id="faq-trigger-1" aria-expanded="false" aria-controls="faq-panel-1">
-          <span>Faut-il une ordonnance ?</span>
-          <span class="faq-sign" aria-hidden="true">+</span>
-        </button>
-        <div id="faq-panel-1" class="faq-answer" role="region" aria-labelledby="faq-trigger-1" hidden>
-          Oui, la plupart des soins à domicile sont réalisés sur prescription médicale. Si vous n'en avez pas encore, appelez-nous : nous vous orientons.
+      {faq.map((item, i) => (
+        <div class="faq-item">
+          <button type="button" class="faq-trigger" id={`faq-trigger-${i + 1}`} aria-expanded="false" aria-controls={`faq-panel-${i + 1}`}>
+            <span>{item.q}</span>
+            <span class="faq-sign" aria-hidden="true">+</span>
+          </button>
+          <div id={`faq-panel-${i + 1}`} class="faq-answer" role="region" aria-labelledby={`faq-trigger-${i + 1}`} hidden>
+            {item.a}
+          </div>
         </div>
-      </div>
-      <div class="faq-item">
-        <button type="button" class="faq-trigger" id="faq-trigger-2" aria-expanded="false" aria-controls="faq-panel-2">
-          <span>Les soins sont-ils remboursés ?</span>
-          <span class="faq-sign" aria-hidden="true">+</span>
-        </button>
-        <div id="faq-panel-2" class="faq-answer" role="region" aria-labelledby="faq-trigger-2" hidden>
-          Nous sommes conventionnées et pratiquons le tiers payant : vous n'avancez rien avec votre carte Vitale et votre mutuelle.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button type="button" class="faq-trigger" id="faq-trigger-3" aria-expanded="false" aria-controls="faq-panel-3">
-          <span>Sous quel délai pouvez-vous passer ?</span>
-          <span class="faq-sign" aria-hidden="true">+</span>
-        </button>
-        <div id="faq-panel-3" class="faq-answer" role="region" aria-labelledby="faq-trigger-3" hidden>
-          En général dès le lendemain, souvent le jour même pour les prises de sang et les pansements urgents.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button type="button" class="faq-trigger" id="faq-trigger-4" aria-expanded="false" aria-controls="faq-panel-4">
-          <span>Intervenez-vous le week-end et les jours fériés ?</span>
-          <span class="faq-sign" aria-hidden="true">+</span>
-        </button>
-        <div id="faq-panel-4" class="faq-answer" role="region" aria-labelledby="faq-trigger-4" hidden>
-          Oui, nous intervenons tous les jours de l'année, de 8h à 20h, y compris les jours fériés.
-        </div>
-      </div>
+      ))}
     </div>
   </section>
 
