@@ -18,14 +18,14 @@
     });
   }
 
-  // "Voir les 7 autres soins" accordion
+  // "Voir les 9 autres soins" accordion
   const soinsTrigger = document.getElementById("soins-accordion-trigger");
   const soinsPanel = document.getElementById("soins-accordion-panel");
   if (soinsTrigger && soinsPanel) {
     setupAccordion(soinsTrigger, soinsPanel, {
       signSelector: ".accordion-sign",
       labelSelector: ".accordion-label",
-      label: { open: "Tous nos autres soins", closed: "Voir les 7 autres soins" }
+      label: { open: "Tous nos autres soins", closed: "Voir les 9 autres soins" }
     });
   }
 

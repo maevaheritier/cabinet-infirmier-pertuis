@@ -21,10 +21,10 @@ Site statique pur : déployable tel quel sur Netlify, Vercel ou OVH.
 
 ## À finaliser avec la cliente avant mise en ligne
 
-- **Téléphone** : `06 12 34 56 78` est un placeholder, présent dans ~10 endroits
-  (header, hero, footer, JSON-LD). Rechercher/remplacer `+33612345678` et `06 12 34 56 78`.
-- **Adresse** : « 12 rue Exemple, 84120 Pertuis » — placeholder dans le footer et le JSON-LD
-  (`src/layouts/BaseLayout.astro`).
+- **Téléphone** : réel — 06 69 20 84 75 (Maeva) en numéro principal partout (header, hero,
+  footer, JSON-LD, WhatsApp) ; 06 21 06 31 27 (Sophie) dans sa carte équipe (`#nous`).
+- **Adresse** : réelle — 80 impasse Thomas Alva Edison, 84120 Pertuis (footer, JSON-LD,
+  mentions légales, carte OpenStreetMap dans `#zone`).
 - **Photos** : deux emplacements avec placeholder visuel (hero 4/5, "Qui sommes-nous" 1/1),
   marqués `<!-- TODO -->` dans `src/pages/index.astro`.
 - **Mentions légales / RGPD** : contenu à compléter dans `src/pages/mentions-legales.astro`
