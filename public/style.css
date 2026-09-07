@@ -231,16 +231,6 @@ button:focus-visible {
   line-height: 1.7;
   padding: 16px;
 }
-.hero-availability {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 18px 22px; border-radius: 22px;
-  background: var(--accent);
-  color: var(--green-deep-dark);
-}
-.hero-availability-main { display: flex; align-items: center; gap: 9px; font-size: 14.5px; font-weight: 700; }
-.hero-availability-main .icon { font-size: 20px; }
-.hero-availability-sub { font-size: 13px; font-weight: 600; color: var(--green-deep); }
-
 /* ===================== NOS SOINS ===================== */
 .soins-section { padding: 56px var(--content-pad) 72px; }
 .soins-panel { background: var(--page-gray); border-radius: var(--radius-panel); padding: 58px 46px 50px; }
@@ -285,10 +275,23 @@ button:focus-visible {
   transition: background .15s;
 }
 .accordion-trigger:hover { background: var(--row-hover); }
-.accordion-sign { font-size: 22px; color: var(--green-action); font-weight: 400; }
+.accordion-sign {
+  font-size: 22px; color: var(--green-action); font-weight: 400;
+  transition: transform .25s ease;
+}
+.accordion-trigger[aria-expanded="true"] .accordion-sign { transform: rotate(180deg); }
+
+.autres-soins-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  min-height: 0;
+  transition: grid-template-rows .32s cubic-bezier(.4,0,.2,1);
+}
+.autres-soins-panel.is-open { grid-template-rows: 1fr; }
+.autres-soins-panel-inner { overflow: hidden; }
 .autres-soins-grid {
   display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px;
-  padding: 0 26px 24px;
+  padding: 4px 26px 24px;
 }
 .autres-soins-grid li {
   display: flex; align-items: center; gap: 12px;
@@ -434,8 +437,25 @@ button:focus-visible {
   transition: background .15s;
 }
 .faq-trigger:hover { background: var(--row-hover); }
-.faq-sign { font-size: 22px; color: var(--green-action); font-weight: 400; flex: none; }
-.faq-answer { padding: 0 24px 22px; font-size: 15.5px; line-height: 1.65; color: var(--text-body); }
+.faq-sign {
+  font-size: 22px; color: var(--green-action); font-weight: 400; flex: none;
+  transition: transform .25s ease;
+}
+.faq-trigger[aria-expanded="true"] .faq-sign { transform: rotate(180deg); }
+
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  min-height: 0;
+  transition: grid-template-rows .32s cubic-bezier(.4,0,.2,1);
+}
+.faq-answer.is-open { grid-template-rows: 1fr; }
+.faq-answer-inner { overflow: hidden; }
+.faq-answer-text {
+  margin: 0;
+  padding: 6px 24px 22px;
+  font-size: 15.5px; line-height: 1.65; color: var(--text-body);
+}
 
 /* ===================== FOOTER ===================== */
 .site-footer { background: #fff; }

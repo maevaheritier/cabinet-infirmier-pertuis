@@ -79,10 +79,6 @@ const faq = [
             <!-- TODO photo réelle : infirmière en soin à domicile, format vertical 4/5 -->
             <span class="photo-placeholder" role="img" aria-label="Emplacement photo à venir : infirmière en soin à domicile">Photo à venir<br>(format vertical 4/5)</span>
           </div>
-          <div class="hero-availability">
-            <span class="hero-availability-main"><span class="icon" aria-hidden="true">schedule</span>Joignables 8h – 20h</span>
-            <span class="hero-availability-sub">on vous répond</span>
-          </div>
         </div>
       </div>
     </div>
@@ -124,17 +120,19 @@ const faq = [
           <span class="accordion-sign" aria-hidden="true">+</span>
         </button>
         <div id="soins-accordion-panel" class="autres-soins-panel" role="region" aria-labelledby="soins-accordion-trigger" hidden>
-          <ul class="autres-soins-grid">
-            <li><span class="icon" aria-hidden="true">check_circle</span>Injections</li>
-            <li><span class="icon" aria-hidden="true">check_circle</span>Perfusions</li>
-            <li><span class="icon" aria-hidden="true">check_circle</span>Nutrition entérale / parentérale</li>
-            <li><span class="icon" aria-hidden="true">check_circle</span>Suivi du diabète (glycémie, insuline)</li>
-            <li><span class="icon" aria-hidden="true">check_circle</span>Soins post-opératoires</li>
-            <li><span class="icon" aria-hidden="true">check_circle</span>Vaccination</li>
-            <li><span class="icon" aria-hidden="true">check_circle</span>Perte d'autonomie / personnes âgées</li>
-            <li><span class="icon" aria-hidden="true">check_circle</span>Bilan de soins infirmiers (BSI)</li>
-            <li><span class="icon" aria-hidden="true">check_circle</span>Surveillance de traitement</li>
-          </ul>
+          <div class="autres-soins-panel-inner">
+            <ul class="autres-soins-grid">
+              <li><span class="icon" aria-hidden="true">check_circle</span>Injections</li>
+              <li><span class="icon" aria-hidden="true">check_circle</span>Perfusions</li>
+              <li><span class="icon" aria-hidden="true">check_circle</span>Nutrition entérale / parentérale</li>
+              <li><span class="icon" aria-hidden="true">check_circle</span>Suivi du diabète (glycémie, insuline)</li>
+              <li><span class="icon" aria-hidden="true">check_circle</span>Soins post-opératoires</li>
+              <li><span class="icon" aria-hidden="true">check_circle</span>Vaccination</li>
+              <li><span class="icon" aria-hidden="true">check_circle</span>Perte d'autonomie / personnes âgées</li>
+              <li><span class="icon" aria-hidden="true">check_circle</span>Bilan de soins infirmiers (BSI)</li>
+              <li><span class="icon" aria-hidden="true">check_circle</span>Surveillance de traitement</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -254,7 +252,7 @@ const faq = [
             <span class="faq-sign" aria-hidden="true">+</span>
           </button>
           <div id={`faq-panel-${i + 1}`} class="faq-answer" role="region" aria-labelledby={`faq-trigger-${i + 1}`} hidden>
-            {item.a}
+            <div class="faq-answer-inner"><p class="faq-answer-text">{item.a}</p></div>
           </div>
         </div>
       ))}

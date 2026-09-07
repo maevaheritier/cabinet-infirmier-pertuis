@@ -1,13 +1,41 @@
 (function () {
   "use strict";
 
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function setPanelOpen(panel, open) {
+    if (open) {
+      panel.hidden = false;
+      if (reduceMotion) {
+        panel.classList.add("is-open");
+        return;
+      }
+      // force a reflow so the 0fr -> 1fr transition actually plays
+      void panel.offsetHeight;
+      panel.classList.add("is-open");
+    } else {
+      if (reduceMotion) {
+        panel.classList.remove("is-open");
+        panel.hidden = true;
+        return;
+      }
+      panel.classList.remove("is-open");
+      const onEnd = function (e) {
+        if (e.target !== panel || e.propertyName !== "grid-template-rows") return;
+        panel.removeEventListener("transitionend", onEnd);
+        if (!panel.classList.contains("is-open")) panel.hidden = true;
+      };
+      panel.addEventListener("transitionend", onEnd);
+    }
+  }
+
   function setupAccordion(trigger, panel, options) {
     options = options || {};
     trigger.addEventListener("click", function () {
       const isOpen = trigger.getAttribute("aria-expanded") === "true";
       const next = !isOpen;
       trigger.setAttribute("aria-expanded", String(next));
-      panel.hidden = !next;
+      setPanelOpen(panel, next);
       const sign = trigger.querySelector(options.signSelector);
       if (sign) sign.textContent = next ? "−" : "+";
       if (options.label) {
@@ -45,7 +73,7 @@
           const otherPanel = other.querySelector(".faq-answer");
           if (!otherTrigger || !otherPanel) return;
           otherTrigger.setAttribute("aria-expanded", "false");
-          otherPanel.hidden = true;
+          setPanelOpen(otherPanel, false);
           const otherSign = otherTrigger.querySelector(".faq-sign");
           if (otherSign) otherSign.textContent = "+";
         });
@@ -54,7 +82,6 @@
   });
 
   // Scroll reveal
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const revealEls = Array.from(document.querySelectorAll("[data-reveal]"));
 
   if (reduceMotion || !("IntersectionObserver" in window)) {
